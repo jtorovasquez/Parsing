@@ -1,2 +1,7 @@
 # Parsing
-installing html5lib for running in python3
+#installing html5lib for running in python3
+from urllib.request import urlopen
+import html5lib
+
+with urlopen("http://example.com/") as f:
+    document = html5lib.parse(f, transport_encoding=f.info().get_content_charset())
